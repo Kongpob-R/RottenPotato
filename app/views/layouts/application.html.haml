@@ -3,23 +3,26 @@
   %head
     %title RottenPotatoes!
     = stylesheet_link_tag 'application'
+    = javascript_pack_tag 'application'
     = csrf_meta_tags
 
   %body
-    %nav.navbar.navbar-light.bglight
+    %nav.navbar.navbar-custom
       .container-fluid
         %a.navbar-brand{:href => "/"} Rotten Potatoes
-        
         %ul.navbar-nav
           -if session[:user_id] == nil
-            -# %li.nav-item
-            -#   = link_to 'Sign up with Facebook', '/auth/facebook/callback', :class => "nav-link"
             %li.nav-item
               = link_to 'Sign in with Facebook', login_path, :class => "nav-link"
           -else
             %li.nav-item
-            = link_to 'Sign out', logout_path, :class => "nav-link"
-    
+            = link_to 'Sign out', movies_path, :class => "nav-link"
+    %br/
     %div{ id: 'search_result' }
+    - if flash[:notice]
+      #notice.message= flash[:notice]
+    - elsif flash[:warning]
+      #warning.message= flash[:warning]
     .wrapper
       = yield
+    = javascript_include_tag 'application'

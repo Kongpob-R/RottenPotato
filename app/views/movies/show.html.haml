@@ -18,3 +18,5 @@
       = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger'
     %div.col-md-2
       = link_to 'Back to movie list', movies_path, :class => 'btn btn-secondary'
+    %div.col-md-2
+      = link_to 'Add Review', new_movie_review_path(@movie)

@@ -1,6 +1,6 @@
 #container
   %h1 All Movies
-
+  
   %table#movies.table
     %thead
       %tr
@@ -16,10 +16,14 @@
           %td= movie.title
           %td= movie.rating
           %td= movie.release_date
-          %td= link_to "More aboout #{movie.title}", movie_path(movie), :class => 'btn btn-info'
+          %td= link_to "More about #{movie.title}", movie_path(movie), :class => 'btn btn-info'
 
-  = link_to 'Add new movie', new_movie_path, :class => 'btn btn-primary'
-
-  %form_tag{ id: 'search_tmdb_form'}
-    = text_field :search, '', :class => "form-control mr-sm-2"
-    %button.btn.btn-outline-success.my-2.my-sm-0{ type: 'submit' } Search TMDb
+  %div.row
+    %div.col-md-2
+      = link_to 'Add new movie', new_movie_path, :class => 'btn btn-primary'
+    %div.col-md-2
+      %form_tag{ id: 'search_tmdb_form'}
+        = text_field :search, '', :class => "form-control mr-sm-2"
+    %div.col-md-2
+      %button.btn.btn-outline-success.my-2.my-sm-0{ type: 'submit' } Search TMDb
+            

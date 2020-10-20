@@ -1,3 +1,21 @@
+nav {
+    background-color: rgb(255, 207, 74);
+    height: 80px;
+    box-shadow: 0 0 5px #AAAAAA;
+}
+
+.navbar-brand {
+    color: rgb(238,1,1);
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium';
+}
+
+.navbar-brand ::after {
+    color: rgb(238,1,1);
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium';
+}
+
 #container {
     width: 90%;
     margin: 0 auto;
