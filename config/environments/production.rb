@@ -1,12 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
-    logger           = ActiveSupport::Logger.new(STDOUT)
-    logger.formatter = config.log_formatter
-    config.logger = ActiveSupport::TaggedLogging.new(logger)
-  end
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -64,7 +58,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "Potato_production"
+  # config.active_job.queue_name_prefix = "myrottenpotatoes_production"
 
   config.action_mailer.perform_caching = false
 

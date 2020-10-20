@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get  'auth/:provider/callback' => 'sessions#create'
   post 'logout' => 'sessions#destroy'
   get  'auth/failure' => 'sessions#failure'
-  get  'auth/twitter', :as => 'login'
+  get  'auth/facebook', :as => 'login'
   
   get '/movies/search_tmdb' => 'movies#search_tmdb'
   post '/movies/createfromtmdb' => 'movies#create_from_tmdb', :as => 'createfromtmdb'
